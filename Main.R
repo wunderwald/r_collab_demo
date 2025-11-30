@@ -5,7 +5,7 @@ library(XLConnect)
 parse_ibi <- function(path) {
   ibi <- readWorksheet(loadWorkbook(path),sheet=1, header=FALSE)
   colnames(ibi) <- c("IBI")
-  return(ibi)
+  return(ibi$IBI)
 }
 
 # parse IBI data
