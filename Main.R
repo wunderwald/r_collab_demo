@@ -12,6 +12,26 @@ parse_ibi <- function(path) {
 ibi_a <- parse_ibi("HRV_a.xlsx")
 ibi_b <- parse_ibi("HRV_b.xlsx")
 
+
+
+library(readxl)
+ibi_a <- read_excel("HRV_a.xlsx")
+ibi_b <- read_excel("HRV_b.xlsx")
+
 # TODO: calculate summary stats for IBI series
+
+library(dplyr)
+ibi_a <- ibi_a |> rename(var_a = '446')
+
+
+# install.packages("psych")
+library(psych)
+describe(ibi_a$var_a)
+
+
+ibi_b <- ibi_b |> rename(var_b = '510')
+describe(ibi_b$var_b)
+
+
 
 # TODO: plot IBI series
