@@ -12,6 +12,12 @@ parse_ibi <- function(path) {
 ibi_a <- parse_ibi("HRV_a.xlsx")
 ibi_b <- parse_ibi("HRV_b.xlsx")
 
+
+
+library(readxl)
+ibi_a <- read_excel("HRV_a.xlsx")
+ibi_b <- read_excel("HRV_b.xlsx")
+
 # TODO: calculate summary stats for IBI series
 
 # TODO: plot IBI series
