@@ -1,16 +1,10 @@
-# install.packages("XLConnect")
-library(XLConnect)
+# install packages if this is important
+library(tidyverse)
+library(readxl)
 
-# reads IBI values from XLSX (one sheet, one column, no header)
-parse_ibi <- function(path) {
-  ibi <- readWorksheet(loadWorkbook(path),sheet=1, header=FALSE)
-  colnames(ibi) <- c("IBI")
-  return(ibi$IBI)
-}
+df <- read_xlsx("HRV_a.xlsx")
 
-# parse IBI data
-ibi_a <- parse_ibi("HRV_a.xlsx")
-ibi_b <- parse_ibi("HRV_b.xlsx")
+df_2 <- read_xlsx("HRV_b.xlsx")
 
 # TODO: calculate summary stats for IBI series
 
