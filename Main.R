@@ -13,5 +13,6 @@ ibi_a <- parse_ibi("HRV_a.xlsx")
 ibi_b <- parse_ibi("HRV_b.xlsx")
 
 # TODO: calculate summary stats for IBI series
-
+summary(ibi_a)
+summary(ibi_b)
 # TODO: plot IBI series
